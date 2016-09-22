@@ -4,6 +4,7 @@
  * then set it's value to null;
  *
  */
+var unicorn = null;
 
 
 /* Step 2
@@ -12,7 +13,7 @@
  * then assign it to be the value of "Atari"
  *
  */
-
+var videogame_system = "Atari";
 
 /* Step 3
  *
@@ -21,7 +22,7 @@
  *
  */
 
-
+var sahara_animal = "The Addax";
 /* Step 4
  *
  * Declare a variable named "planets"
@@ -29,7 +30,7 @@
  * each planet in our solar system, in order of distance from the sun
  * Capitalize the names.
  */
-
+var planets=['Mercury','Venus','Earth','Mars','Jupiter','Saturn','Uranus','Neptune'];
 
 /* Step 5
  *
@@ -39,7 +40,7 @@
  *
  */
 
-
+var galilean_moons = ["io","europa","ganymede","callisto"];
 /* Step 6 φ
  *
  * Declare a variable named "golden_ratio"
@@ -47,14 +48,14 @@
  *
  */
 
-
+var golden_ratio = 1.61803398874;
 /* Step 7
  *
  * Declare a variable named "earths_water_composition"
  * and assign the value of earths_water_composition to 0.71
  *
  */
-
+var earths_water_composition = 0.71;
 
 /* Step 8
  *
@@ -63,7 +64,7 @@
  *
  */
 
-
+var club_name = "Fight Club";
 /* Step 9
  *
  * Define a literal object named "gender"
@@ -73,7 +74,11 @@
  *   male    => "male"
  *   unknown => undefined
  */
-
+var gender = {
+  female : "female",
+  male : "male",
+  unknown : undefined
+};
 
 /* Step 10
  *
@@ -87,7 +92,12 @@
  *   gender  => gender.female
  *
  */
-
+var princess_leia = {
+  name : "Leia Organa",
+  money : 890,
+  age : 20,
+  gender : "female"
+};
 
 /* Step 11
  *
@@ -100,8 +110,12 @@
  *   jsonformatter.curiousconcept.com => "104.28.5.70"
  *
  */
-
-
+ var domains = {
+  'ycombinator.com' : "198.41.190.47",
+  'laughingsquid.com' : "162.159.247.97",
+  'slumlordhosting.com' : "198.61.179.126",
+  'jsonformatter.curiousconcept.com' : "104.28.5.70"
+};
 /* Step 12
  *
  * Define a literal object named "browsers"
@@ -115,15 +129,23 @@
  *   Konqueror  => "konqueror.org"
  *
  */
+var browsers = {
 
+ Chromium: "google.com",
+ Safari : "apple.com",
+ Opera : "opera.com",
+ Firefox : "mozilla.org",
+ Sleipnir : "fenrir-inc.com",
+ Konqueror  : "konqueror.org"
+};
 
 /* Step 13
  *
  * Define a literal object named "rainbow"
  * with properties and values set to:
  *
- *  colors    => [LITERAL OBJECT]
- *                  red       => "#F0280A"
+ *  colors : [LITERAL OBJECT]
+ *                  red    : "#F0280A"
  *                  orange    => "#FF8800"
  *                  yellow    => "#FFDD00"
  *                  green     => "#51AB0C"
@@ -133,8 +155,18 @@
  *  isDouble  => true
  *
  */
-
-
+var rainbow ={
+  colors : {
+    red    : "#F0280A",
+    orange    : "#FF8800",
+    yellow    : "#FFDD00",
+    green     : "#51AB0C",
+    blue      : "#1593ED",
+    indigo    : "#5215ED",
+    violet    : "#A915ED",
+  },
+  isDouble  : true
+};
 /* Step 14
  *
  * Declare an array named "linuxFlavors"
@@ -149,7 +181,7 @@
  *
  */
 
-
+var linuxFlavors =["Gentoo","Fedora","Debian","Slackware","Red Hat","Bieber Linux"];
 /* Step 15
  *
  * Declare an array named "DNA" with the
@@ -162,7 +194,7 @@
  * "cytosine"
  *
  */
-
+var DNA = ["nucleatides","guanine","adenine","thymine","cytosine"];
 
 /* Step 16
  *
@@ -175,7 +207,12 @@
  * Surface      => 320
  *
  */
-
+var laptopCosts = {
+  MacBook  : 1500,
+ Alienware : 2500,
+ HP : 499,
+ Surface : 320
+};
 
 /* Step 17
  *
@@ -192,7 +229,7 @@
  *
  */
 
-
+var livingOrganismClassification = ["Kingdom","Phylum","Class","Order","Family","Genus","Species"];
 /* Step 18
  *
  * Declare an array named "scmList" with
@@ -206,7 +243,7 @@
  *
  */
 
-
+ var scmList = ["git","svn","mercurial","bazaar","cvs"];
 /* Step 19
  *
  * Define a literal object named "beers" with
@@ -224,7 +261,14 @@
  *                  "Golden"
  *
  */
-
+var beers ={
+  IPA : "Ale",
+ Lager : "Strong",
+ Heffeweisen : "German",
+ Stout : ["Thick","Dark"]  ,
+ Porter : "Bitter",
+ Ale : ["Light","Golden"]
+};
 
 /* Step 20
  *
@@ -234,7 +278,9 @@
  * @return {String}
  *
  */
-
+function sahara_river(){
+  return "Nile River";
+}
 
 /* Step 21
  *
@@ -246,7 +292,9 @@
  * @return {Number}
  *
  */
-
+ function addNumbers (a,b){
+  return (a+b);
+ }
 
 /* Step 22
  *
@@ -260,7 +308,13 @@
  *
  */
 
-
+function installLinux(linux){
+ if(linuxFlavors.indexOf(linux) >= 0){
+    return true;
+  }else{
+    return false;
+  }
+}
 /* Step 23
  *
  * Define a function named "drink" that takes
@@ -278,7 +332,18 @@
  * @return {Bool when False, String when True}
  *
  */
-
+function drink(key){
+ if(beers.hasOwnProperty(key)){
+    //console.log(beers[key]);
+    if(typeof beers[key] !== 'string'){ //[key] <--- displays the property in the object
+     return("This " + key + " is " + beers[key][0] + " and " + beers[key][1]+".");
+    }else{
+      return( "This " + key + " is " + beers[key] + ".");
+    }
+  }else{
+    return false;
+  }
+}
 
 /* Step 24
  *
@@ -291,7 +356,13 @@
  * @return {String if true else return false}
  *
  */
-
+function browseURL(website){
+  if(browsers.hasOwnProperty(website)){
+    return(browsers[website]);
+  }else{
+    return false;
+  }
+}
 
 /* Step 25
  *
@@ -303,7 +374,24 @@
  *
  */
 
+// function listLivingOrgClass(){
+//  let element = '<ul>';
+//  for (var i = 0; i < livingOrganismClassification.length; i++) {
+//    element = element + '<li>' + livingOrganismClassification[i] + '</li>';
+//  }
+//  return element + '</ul>';
+// }
+function listLivingOrgClass(){
+var orderedlist = "<ul>";
+  for(var i = 0; i < livingOrganismClassification.length; i++){
+    console.log(orderedlist);
+     orderedlist += ("<li>" + livingOrganismClassification[i] + "</li>");
 
+  }
+    console.log(orderedlist);
+    return orderedlist + "</ul>";
+
+}
 /* Step 26
  *
  * Define a function named "favoritePlanet" that
