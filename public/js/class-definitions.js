@@ -384,11 +384,10 @@ function browseURL(website){
 function listLivingOrgClass(){
 var orderedlist = "<ul>";
   for(var i = 0; i < livingOrganismClassification.length; i++){
-    console.log(orderedlist);
+
      orderedlist += ("<li>" + livingOrganismClassification[i] + "</li>");
 
   }
-    console.log(orderedlist);
     return orderedlist + "</ul>";
 
 }
@@ -411,7 +410,13 @@ var orderedlist = "<ul>";
  * @return {String}
  *
  */
-
+function favoritePlanet(personsPlanet){
+  if(planets.indexOf(personsPlanet) >= 0){
+    return(("I" + "'" + "m " + "from " + personsPlanet + ", but I wish I could go to " + planets[3]));
+  }else{
+    return personsPlanet + " is not a planet!";
+  }
+}
 
 /* Step 27
  *
@@ -435,7 +440,24 @@ var orderedlist = "<ul>";
  *   earnMoney
  *
  */
+function Person(name,money,age,gender){
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+}
 
+  Person.prototype.spendMoney = function(personsMoney){
+   //console.log("personsMoney",personsMoney);
+   //console.log("this.money",this.money);
+   this.money = (this.money - personsMoney);
+   //console.log("personsMoney",personsMoney);
+   return this.money;
+  };
+  Person.prototype.earnMoney = function(personsMoney){
+    this.money = (this.money + personsMoney);
+      return this.money;
+  };
 
 /* Step 28
  *
@@ -448,8 +470,13 @@ var orderedlist = "<ul>";
  * @return {String}
  *
  */
-
-
+function purchaseLaptop(laptop){
+  if(laptopCosts.hasOwnProperty(laptop)){
+   return laptopCosts[laptop].toString();
+  }else{
+    return  -1;
+  }
+}
 /* Step 29
  *
  * Define a function named "canTalkAbout" that takes
@@ -462,7 +489,13 @@ var orderedlist = "<ul>";
  *
  */
 
-
+function canTalkAbout(club){
+  if(club === club_name){
+    return false;
+  }else{
+  return  true;
+  }
+}
 /* Step 30
  *
  * Define a class named "Pen" with a property for
@@ -483,7 +516,16 @@ var orderedlist = "<ul>";
  *   write
  *
  */
+function Pen(color){
+this.color = color;
+}
 
+Pen.prototype.write = function(message){
+
+
+ //console.log(this.color + ":" + message);
+ return(this.color + ": " + message);
+};
 
 /* Step 31
  *
@@ -512,7 +554,23 @@ var orderedlist = "<ul>";
  *
  */
 
+function Garden(plantsTotal){
+  this.plantsTotal = plantsTotal;
+  this.isWatered = false;
+}
 
+Garden.prototype.water = function(){
+  this.isWatered = true;
+  //console.log("water function watered",this.isWatered);
+};
+Garden.prototype.grow = function(){
+  if(this.isWatered === true){
+    this.plantsTotal++;
+   // console.log("isWatered function",this.plantsTotal);
+  }else{
+    return false;
+  }
+};
 /* Step 32
  *
  * Define a class named "SolarSystem" with a property
@@ -529,7 +587,16 @@ var orderedlist = "<ul>";
  *   removePlanet
  *
  */
+function SolarSystem(){
+  this.planets=[];
+}
 
+SolarSystem.prototype.addPlanet = function(planetsToAdd){
+  return this.planets.push(planetsToAdd);
+};
+SolarSystem.prototype.removePlanet = function(planetsToAdd){
+  return this.planets.pop(planetsToAdd);
+};
 
 /* Step 33
  *
