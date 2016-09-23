@@ -1001,9 +1001,9 @@ this.sides = sides;
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
 
-function Box(anything,open){
-  this.anything = 'contents';
-  this.open = false;
+function Box(contents,isOpen){
+  this.contents = contents;
+  this.isOpen = isOpen;
 }
 /**
  * Step 54
@@ -1011,7 +1011,9 @@ function Box(anything,open){
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-
+function Door(isOpen){
+this.isOpen = isOpen;
+}
 
 /**
  * Step 55
@@ -1020,7 +1022,10 @@ function Box(anything,open){
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
-
+function Shoe(size, color){
+this.size = size;
+this.color = color;
+}
 
 /**
  * Step 56
@@ -1029,7 +1034,9 @@ function Box(anything,open){
  * @param {number} stories How many stories tall the house is
  */
 
-
+function House(stories){
+this.stories = stories;
+}
 /**
  * Step 57
  *
@@ -1037,14 +1044,18 @@ function Box(anything,open){
  * @param {boolean} isOn Whether the light is on or off
  */
 
-
+function Lightbulb(isOn){
+this.isOn = isOn;
+}
 /**
  * Step 58
  *
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-
+function Cookie(flavor){
+this.flavor = flavor;
+}
 
 /**
  * Step 59
@@ -1052,7 +1063,9 @@ function Box(anything,open){
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
-
+function Meal(foods){
+this.foods = foods;
+}
 
 /**
  * Create a new instance of the Classes you defined above, below!
@@ -1061,20 +1074,24 @@ function Box(anything,open){
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+
+var george = new Animal('Monkey','male');
+
+var nemo = new Animal('Fish','male');
 
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle('Honda','Civic');
+var forte = new Vehicle('KIA','Forte');
 
 // Create 2 shapes with different numbers of sides
-var square;
-var hexagon;
+var square = new Shape(4);
+var hexagon = new Shape(6);
 
 // Create 2 boxes
-var catBox;
-var christmasPresent;
+var cat = new Animal('Cat');
+var catBox = new Box(cat,true);
+
+var christmasPresent = new Box(null,false);
 
 // Create 2 doors
 var automaticDoor;
