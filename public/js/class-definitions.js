@@ -632,6 +632,35 @@ SolarSystem.prototype.removePlanet = function(planetsToAdd){
  */
 
 
+function PrincessLeia(name,money,age,gender){
+Person.call(this,name,money,age,gender);
+this.isInTrouble = null;
+
+}
+PrincessLeia.prototype = Object.create(Person.prototype,{
+  constructor:{
+    value :Person
+  }
+});
+
+PrincessLeia.prototype.shootsGun = function(){
+  this.isInTrouble = false;
+return "Leia shoots her gun wildly";
+};
+
+PrincessLeia.prototype.getsInTrouble = function(){
+  this.isInTrouble = true;
+return "Help me Obi-wan Kenobi, you're my only hope";
+};
+
+PrincessLeia.prototype.marries = function(name){
+if(name === "Han Solo"){
+  return true;
+}
+if(name === "Luke Skywalker"){
+  return "Gross!";
+  }
+};
 /* Step 34
  *
  * Define a class named "Stapler" with properties "color"
@@ -649,7 +678,19 @@ SolarSystem.prototype.removePlanet = function(planetsToAdd){
  *   staplePapers
  *
  */
-
+function Stapler(color,maxPapers){
+  this.color = color;
+  this.maxPapers = maxPapers;
+}
+Stapler.prototype.staplePapers = function(numPapers){
+  if(numPapers <= this.maxPapers){
+//console.log("numPapers",numPapers,"true");
+    return true;
+  }else{
+  //  console.log("numPapers should be false",numPapers,"false");
+    return false;
+  }
+};
 
 /* Step 35
  *
@@ -689,6 +730,38 @@ SolarSystem.prototype.removePlanet = function(planetsToAdd){
  *   addDiscovery
  *
  */
+
+function Scientist(name,money,age,gender,discoveries,disciplines){
+  Person.call(this,name,money,age,gender);
+this.disciplines = [];
+this.discoveries = [];
+}
+Scientist.prototype = Object.create(Person.prototype,{
+  constructor:{
+    value :Scientist
+  }
+});
+Scientist.prototype.addDiscipline  = function(word){
+  this.disciplines.push(word);
+  return this.disciplines;
+};
+Scientist.prototype.checkDiscipline  = function(word){
+  if(this.disciplines.indexOf(word)>= 0){
+    return true;
+  }else{
+    return false;
+  }
+};
+Scientist.prototype.addDiscovery = function(word){
+this.discoveries.push(word);
+  if(this.discoveries.indexOf(word) === 0){
+    return "I discovered " + this.discoveries[0] + ".";
+  }if(this.discoveries.indexOf(word) == 1){
+    return "I discovered " + this.discoveries[0] + " and " + this.discoveries[1] + "." ;
+  }if(this.discoveries.indexOf(word) == 2){
+    return "I discovered " + this.discoveries[0] + ", " + this.discoveries[1] + ", and " + this.discoveries[2] + ".";
+  }
+};
 
 
 /* Step 36
