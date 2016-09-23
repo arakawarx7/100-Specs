@@ -958,7 +958,10 @@ this.discoveries.push(word);
  * @param {string} gender  male or female
  */
 
-
+function Animal(species, gender){
+this.species = species;
+this.gender = gender;
+};
 /**
  * Step 51
  *
@@ -967,6 +970,10 @@ this.discoveries.push(word);
  * @param {string} model The vehicle's model
  */
 
+function Vehicle(make, model){
+this.make = make;
+this.model = model;
+}
 
 /**
  * Step 52
@@ -978,7 +985,14 @@ this.discoveries.push(word);
  *
  */
 
-
+function Shape(sides){
+this.sides = sides;
+  if(this.sides < 3 || this.side !== typeof "string"){
+   return this.sides = null;
+  }else{
+    return this.sides;
+  }
+}
 /**
  * Step 53
  *
@@ -987,7 +1001,10 @@ this.discoveries.push(word);
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
 
-
+function Box(anything,open){
+  this.anything = 'contents';
+  this.open = false;
+}
 /**
  * Step 54
  *
